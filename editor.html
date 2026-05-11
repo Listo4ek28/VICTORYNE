@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Редактор викторин - ВИКТОРИНА+</title>
+</head>
+<body>
+    <header>
+        <div class="user-info">
+            <a href="index.html" class="username">На главную</a>
+            <div id="user-avatar">
+                <img id="avatar-img" src="https://i.pravatar.cc/50?img=12" alt="Аватар пользователя">
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <section id="title">
+            <p>РЕДАКТОР ВИКТОРИН</p>
+        </section>
+        
+        <section id="modes">
+            <div id="editor-tabs">
+                <button id="tab-add-question" class="tab-btn active">Добавить вопрос</button>
+                <button id="tab-add-topic" class="tab-btn">Добавить тему</button>
+            </div>
+            <div id="editor-tabs">
+                <button id="tab-manage-topics" class="tab-btn">Управление темами</button>
+                <button id="tab-manage-questions" class="tab-btn">Управление вопросами</button>
+            </div>
+            
+            <hr>
+            
+            <div id="add-question-tab" class="tab-content active">
+                <form id="question-form">
+                    <div class="form-group">
+                        <label for="question-topic">Выберите тему:</label>
+                        <select id="question-topic" name="topic" required>
+                            <option value="">Загрузка тем...</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="question-text">Текст вопроса:</label>
+                        <textarea id="question-text" name="question_text" required 
+                                  placeholder="Введите текст вопроса" rows="3"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Уровень сложности:</label>
+                        <div class="difficulty-buttons">
+                            <button type="button" class="difficulty-btn" data-value="1">Легкий</button>
+                            <button type="button" class="difficulty-btn active" data-value="2">Средний</button>
+                            <button type="button" class="difficulty-btn" data-value="3">Сложный</button>
+                            <input type="hidden" id="question-difficulty" name="difficulty" value="2">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Варианты ответов:</label>
+                        <div id="answers-container">
+                            <!-- Будет заполнено через JavaScript -->
+                        </div>
+                        <button type="button" id="add-answer-btn" style="margin-top: 10px;">+ Добавить вариант</button>
+                    </div>
+                    
+                    <hr>
+                    
+                    <button type="submit" id="save-question-btn">Сохранить вопрос</button>
+                    <button type="button" id="clear-form-btn">Очистить форму</button>
+                </form>
+            </div>
+            
+            <div id="add-topic-tab" class="tab-content">
+                <form id="topic-form">
+                    <div class="form-group">
+                        <label for="topic-name">Название темы:</label>
+                        <input type="text" id="topic-name" name="name" required 
+                               placeholder="Введите название темы" maxlength="32">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="topic-description">Описание темы:</label>
+                        <textarea id="topic-description" name="description" required 
+                                  placeholder="Введите описание темы" rows="3"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="topic-icon">Иконка (эмодзи):</label>
+                        <input type="text" id="topic-icon" name="icon" 
+                               placeholder="📚 (необязательно)" maxlength="5">
+                        <small>Можно использовать эмодзи, например: 📚, 🏛️, 🌍</small>
+                    </div>
+                    
+                    <hr>
+                    
+                    <button type="submit" id="save-topic-btn">Создать тему</button>
+                </form>
+            </div>
+            
+            <div id="manage-topics-tab" class="tab-content">
+                <div class="topics-management-section">
+                    <div class="form-group">
+                        <label for="search-topic">Поиск темы:</label>
+                        <input type="text" id="search-topic" name="search_topic" 
+                               placeholder="Введите название темы для поиска..."
+                               style="margin-bottom: 20px;">
+                    </div>
+                    
+                    <div id="topics-list-container">
+                        <!-- Список тем будет загружен здесь -->
+                    </div>
+                    
+                    <button id="refresh-topics-btn" style="margin-top: 20px;">Обновить список тем</button>
+                </div>
+            </div>
+            
+            <div id="manage-questions-tab" class="tab-content">
+                <div class="form-group">
+                    <label for="filter-topic">Фильтр по теме:</label>
+                    <select id="filter-topic" name="filter_topic">
+                        <option value="">Все темы</option>
+                    </select>
+                </div>
+                
+                <div id="questions-list">
+                    <!-- Список вопросов будет загружен здесь -->
+                </div>
+                
+                <button id="load-questions-btn">Загрузить вопросы</button>
+            </div>
+            
+            <hr>
+            
+            <div id="editor-result" style="display: none; margin-top: 20px; padding: 15px; border-radius: 8px;">
+                <p id="result-text"></p>
+            </div>
+            
+            <button id="back-btn">Назад</button>
+        </section>
+    </main>
+    
+    <footer>
+        <p>(с) Викторина+, 2026</p>
+        <p>(с) Все права защищены.</p>
+    </footer>
+    
+    <script src="editor.js"></script>
+</body>
+</html>

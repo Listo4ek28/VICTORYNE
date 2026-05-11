@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Выбор темы - ВИКТОРИНА+</title>
+</head>
+<body>
+    <header>
+        <div class="user-info">
+            <a href="index.html" class="username">На главную</a>
+            <div id="user-avatar">
+                <img id="avatar-img" src="https://i.pravatar.cc/50?img=12" alt="Аватар пользователя">
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <section id="title">
+            <p>ВЫБЕРИТЕ ТЕМУ</p>
+        </section>
+        
+        <section id="modes">
+            <!-- Строка поиска -->
+            <div class="search-container">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="search-input" class="search-input" placeholder="Поиск тем..." autocomplete="off">
+            </div>
+            
+            <div id="topics-list">
+                <!-- Темы будут загружены через JavaScript -->
+            </div>
+            
+            <hr>
+            
+            <button id="back-btn">Назад</button>
+        </section>
+    </main>
+    
+    <footer>
+        <p>(с) Викторина+, 2026</p>
+        <p>(с) Все права защищены.</p>
+    </footer>
+    
+    <script src="topics.js"></script>
+</body>
+</html>

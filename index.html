@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>ВИКТОРИНА+</title>
+  </head>
+  <body>
+    <header>
+      <div class="user-info">
+        <button id="login-btn" class="login-btn">Войти</button>
+        <a href="#" id="username-display" class="username" style="display: none;"></a>
+        <div id="user-avatar" style="display: none;">
+          <img id="avatar-img" src="https://i.pravatar.cc/50?img=12" alt="Аватар пользователя">
+        </div>
+      </div>
+    </header>
+    
+    <main>
+      <section id="title">
+        <p>ВИКТОРИНА+</p>
+      </section>
+      
+	<section id="modes">
+	    <button id="random-topic">Случайная тема</button>
+	    <hr>
+	    <button id="choose-topic">Выбрать тему</button>
+	    <hr>
+	    <button id="statistics">Статистика</button>
+	    <div id="editor-section" style="display: none;">
+	        <hr>
+	        <button id="editor-btn">Редактор викторин</button>
+	    </div>
+	</section>
+    </main>
+    
+    <footer>
+      <p>(с) Викторина+, 2026</p>
+      <p>(с) Все права защищены.</p>
+    </footer>
+    
+    <script src="main.js"></script>
+  </body>
+</html>

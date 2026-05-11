@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Вход - ВИКТОРИНА+</title>
+</head>
+<body>
+    <header>
+        <div class="user-info">
+            <a href="index.html" class="username">На главную</a>
+        </div>
+    </header>
+    
+    <main>
+        <section id="title">
+            <p>ВХОД В СИСТЕМУ</p>
+        </section>
+        
+        <section id="modes">
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="username">Имя пользователя:</label>
+                    <input type="text" id="username" name="username" required 
+                           placeholder="Введите имя пользователя">
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Пароль:</label>
+                    <input type="password" id="password" name="password" required 
+                           placeholder="Введите пароль">
+                </div>
+                
+                <hr>
+                
+                <button type="submit" id="login-btn-form">Войти</button>
+                <button type="button" id="back-btn" style="margin-top: 10px;">Назад</button>
+            </form>
+            
+            <div style="margin-top: 20px; text-align: center;">
+                <p>Нет аккаунта? <a href="register.html" style="color: var(--beta-accent);">Зарегистрируйтесь</a></p>
+            </div>
+            
+            <div id="login-result" style="display: none; margin-top: 20px; padding: 15px; border-radius: 8px;">
+                <p id="result-text"></p>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>(с) Викторина+, 2026</p>
+        <p>(с) Все права защищены.</p>
+    </footer>
+    
+    <script src="login.js"></script>
+</body>
+</html>

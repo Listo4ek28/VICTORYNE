@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Регистрация - ВИКТОРИНА+</title>
+</head>
+<body>
+    <header>
+        <div class="user-info">
+            <a href="login.html" class="username">← Назад к входу</a>
+        </div>
+    </header>
+    
+    <main>
+        <section id="title">
+            <p class="gradient-text">СОЗДАНИЕ АККАУНТА</p>
+        </section>
+        
+        <section id="modes">
+            <!-- Добавлен novalidate для отключения браузерной валидации -->
+            <form id="register-form" novalidate>
+                <div class="form-group">
+                    <label for="username">Имя пользователя:</label>
+                    <input type="text" id="username" name="username" required 
+                           placeholder="Придумайте уникальное имя" maxlength="32" autofocus>
+                </div>
+                
+                <!-- Убраны конфликтные атрибуты pattern и title -->
+				<div class="form-group">
+				    <label for="phone">Номер телефона:</label>
+				    <input type="tel" id="phone" name="phone" required 
+				           placeholder="Введите 11 цифр"
+				           inputmode="numeric">
+				    <div class="hint" style="margin-top: 5px; color: var(--beta-text-secondary); font-size: 0.85em;">
+				        Формат: 11 цифр (7-XXX-XXX-XX-XX), где 7 - код России.
+				    </div>
+				</div>
+                
+                <div class="form-group">
+                    <label for="password">Пароль:</label>
+                    <input type="password" id="password" name="password" required 
+                           placeholder="От 4 до 16 символов" minlength="4" maxlength="16">
+                </div>
+                
+                <div class="form-group">
+                    <label for="confirm-password">Подтвердите пароль:</label>
+                    <input type="password" id="confirm-password" name="confirm-password" required 
+                           placeholder="Повторите пароль">
+                </div>
+                
+                <div class="avatar-section">
+                    <label style="display: block; margin-bottom: 10px; font-weight: 600;">Аватар (необязательно):</label>
+                    <p style="margin-bottom: 15px; color: var(--beta-text-secondary); font-size: 0.9em;">
+                        Если не выберете аватар, будет использован стандартный
+                    </p>
+                    
+                    <div class="form-group">
+                        <label for="avatar-file-input">Загрузить изображение:</label>
+                        <input type="file" id="avatar-file-input" name="avatar-file" accept="image/*">
+                    </div>
+                    
+                    <div id="avatar-preview" style="margin: 20px 0; text-align: center;">
+                        <img id="preview-image" src="img/default_avatar.jpg" alt="Предпросмотр аватара" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; border: 3px solid var(--beta-accent);">
+                        <p style="margin-top: 10px; color: var(--beta-text-secondary); font-size: 0.9em;">
+                            Текущий аватар (стандартный)
+                        </p>
+                    </div>
+                </div>
+                
+                <hr>
+                
+                <button type="submit" id="register-btn" class="primary-btn">Создать аккаунт</button>
+                <button type="button" id="back-btn" class="secondary-btn">Отмена</button>
+                
+                <div class="alternative-section" style="margin-top: 25px;">
+                    <p class="alternative-text">
+                        Уже есть аккаунт? <a href="login.html" style="color: var(--beta-accent); font-weight: 600;">Войдите здесь</a>
+                    </p>
+                </div>
+            </form>
+            
+            <div id="registration-result" style="display: none;">
+                <p id="result-text"></p>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>(с) Викторина+, 2026</p>
+        <p>(с) Все права защищены.</p>
+    </footer>
+    
+    <script src="register.js"></script>
+</body>
+</html>
